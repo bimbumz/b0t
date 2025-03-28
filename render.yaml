@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: telegram-bot
+    runtime: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python telegram_bot.py"
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ETHERSCAN_API_KEY
+        sync: false
+      - key: SOLSCAN_API_KEY
+        sync: false
+      - key: GROUP_CHAT_ID
+        sync: false
