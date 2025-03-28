@@ -204,5 +204,5 @@ def main():
     threading.Thread(target=updater.start_polling, daemon=True).start()
 
 if __name__ == "__main__":
-    main()
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    main()  # starts the Telegram bot in a background thread
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))  # starts Flask
